@@ -500,7 +500,7 @@ module.exports = Structures.extend('Message', Message => {
 		static parseArgs(argString, argCount, allowSingleQuote = true) {
 			/* eslint-disable max-len */
 			const commaRegex = allowSingleQuote ? /[,]*(?:(["'])([^]*?)\1|([^,]+))[,]*/g : /[,]*(?:(['])([^]*?)\1|([^,]+))[,]*/g;
-			const re = argString.split(',').length >= argCount - 1 ? commaRegex : allowSingleQuote ? /\s*(?:("|')([^]*?)\1|(\S+))\s*/g : /\s*(?:(")([^]*?)"|(\S+))\s*/g;
+			const re = argString.split(',').length >= argCount ? commaRegex : allowSingleQuote ? /\s*(?:("|')([^]*?)\1|(\S+))\s*/g : /\s*(?:(")([^]*?)"|(\S+))\s*/g;
 			/* eslint-enable max-len */
 			const result = [];
 			let match = [];
